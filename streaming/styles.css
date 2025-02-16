@@ -1,0 +1,487 @@
+/* Estilos gerais */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: url('file:///C:/streaming/streaming/streaming/imagens/netflix-.jpg') no-repeat center center/cover;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-size: cover; /* Garante que a imagem cubra toda a área */
+    background-position: center; /* Centraliza a imagem */
+    background-attachment: fixed; /* Fixa a imagem para evitar distorções ao rolar */
+}
+
+body::-webkit-scrollbar {
+    display: none; /* Oculta a barra de rolagem */
+}
+
+/* Overlay para melhorar a legibilidade */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+/* Cabeçalho */
+header {
+    background: rgba(200, 0, 0, 0.9); /* Vermelho escuro */
+    color: white;
+    padding: 30px 20px;
+    font-size: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 10px 0 0;
+    font-size: 1.1rem;
+}
+
+.fundo-escuroo {
+    background: #000000; /* Cor de fundo escuro */
+    opacity: 0.8;
+    padding: 43px 0; /* Adiciona um pouco de espaçamento interno */
+    width: 100%;
+}
+
+/* Estilos para a logo */
+.logo-intro {
+    position: absolute;
+    top: -35px; /* Distância do topo */
+    left: 20px; /* Distância da esquerda */
+    width: 150px; /* Largura da logo */
+    height: auto; /* Mantém a proporção */
+    z-index: 2; /* Garante que a logo fique acima de outros elementos */
+}
+
+/* Linha de separação */
+.linha-separacao {
+    position: absolute;
+    top: 85px; /* Posiciona a linha abaixo da logo */
+    left: 0; /* Começa da borda esquerda da tela */
+    width: 100%; /* Ocupa 100% da largura da tela */
+    height: 2px; /* Espessura da linha */
+    background: linear-gradient(100deg, rgba(255, 165, 0, 0), rgb(255, 0, 0), rgba(255, 165, 0, 0)); /* Gradiente */
+    box-shadow: 0 0 0px rgba(255, 0, 0, 0.7); /* Efeito neon */
+    z-index: 2; /* Garante que a linha fique acima do fundo, mas abaixo da logo */
+}
+
+/* Estilos da Introdução */
+.introducao {
+    color: white;
+    padding: 80px 20px;
+    text-align: left; /* Alinhar o texto à esquerda */
+    margin: 0;
+    box-shadow: none;
+    display: flex;
+    align-items: flex-start; /* Alinhar o conteúdo ao topo */
+    justify-content: flex-start; /* Alinhar à esquerda */
+    min-height: 400px; /* Altura mínima para a seção */
+    width: 50%; /* Define a largura da seção para ocupar metade da tela */
+    margin-left: 5%; /* Adiciona uma margem à esquerda para afastar da borda */
+}
+
+.introducao .container {
+    max-width: 600px; /* Largura máxima do conteúdo */
+    margin-left: 0; /* Remove a margem à esquerda do container */
+}
+
+.introducao h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.introducao p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+
+.introducao strong {
+    color: #ffcc00; /* Amarelo neon */
+    text-shadow: 0 0 5px #ffcc00;
+}
+
+/* Botão "Quero Assinar" */
+.assinar-intro {
+    background: #ff4500;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    margin-top: 10px;
+}
+
+.assinar-intro:hover {
+    background: #ff0000;
+    transform: scale(1.05);
+}
+
+/* Estilo da linha divisória neon */
+.linha-neon {
+    border: none; /* Remove a borda padrão do <hr> */
+    height: 2px; /* Espessura da linha */
+    background: linear-gradient(90deg, rgba(255, 165, 0, 0), rgb(255, 0, 0), rgba(255, 165, 0, 0)); /* Gradiente laranja */
+    box-shadow: 0 0 20px rgb(255, 0, 0); /* Efeito neon */
+    margin: 0px auto; /* Espaçamento acima e abaixo da linha */
+    width: 100%; /* Largura da linha */
+    max-width: 2200px; /* Largura máxima */
+}
+
+/* Estilos para o streaming */
+.streaming {
+    display: flex; /* Ativa o Flexbox */
+    flex-wrap: wrap; /* Permite que as imagens quebrem para a próxima linha se necessário */
+    justify-content: center; /* Centraliza as imagens horizontalmente */
+    gap: 20px; /* Espaçamento entre as imagens */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.streaming img {
+    max-width: 200px; /* Define um tamanho máximo para as imagens */
+    height: auto; /* Mantém a proporção da imagem */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Sombra para um efeito moderno */
+    transition: transform 0.3s ease; /* Efeito de zoom ao passar o mouse */
+}
+
+.streaming img:hover {
+    transform: scale(1.1); /* Aumenta a imagem ao passar o mouse */
+}
+
+/* Ajustes para o carrossel dentro do fundo escuro */
+.carrossel {
+    padding: 50px 20px;
+    color: white;
+    text-align: center;
+}
+
+.fundo-escuro {
+    background: #000000; /* Cor de fundo escuro */
+    padding: 20px none; /* Adiciona um pouco de espaçamento interno */
+    width: 100%;
+}
+
+.fundo-escuro h4 {
+    font-size: 1.8rem;
+    margin-bottom: 7px;
+    text-align: center;
+    color: #ff4500;
+}
+
+.fundo-escuro h1 {
+    font-size: 1.8rem;
+    margin-bottom: 7px;
+    text-align: center;
+}
+
+/* Ajustes para os planos dentro do fundo escuro */
+.planos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Estilos dos cartões dos planos */
+.plano {
+    background: rgba(20, 20, 20, 0.8); /* Fundo escuro */
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    min-height: 450px;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 2px solid #ff4500;
+    flex-shrink: 0;
+}
+
+.plano h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.plano h1 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.plano ul {
+    padding-left: 20px;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    text-align: left;
+    list-style-type: none;
+}
+
+.plano ul li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.plano .preco {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+.plano:hover .preco {
+    color: #ffcc00;
+}
+
+/* Efeitos de hover simplificados */
+.plano:hover {
+    box-shadow: 0 8px 20px rgba(200, 0, 0, 0.6);
+    background: rgba(30, 30, 30, 0.9); /* Fundo mais escuro ao passar o mouse */
+    border-color: #ffcc00;
+}
+
+/* Destaque para o plano Premium */
+.plano.destaque {
+    background: rgba(30, 30, 30, 0.9); /* Fundo escuro para o plano destacado */
+    box-shadow: 0 8px 20px rgba(200, 0, 0, 0.6);
+    border: 2px solid #ffcc00;
+}
+
+.plano.destaque:hover {
+    background: rgba(40, 40, 40, 0.9); /* Fundo ainda mais escuro ao passar o mouse */
+    border-color: #ff4500;
+}
+
+/* Botão Assinar */
+.assinar {
+    background: #b30000;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+    text-align: center;
+}
+
+.assinar:hover {
+    background: #800000;
+}
+
+/* Caixa do Selo */
+.caixa-selo {
+    background-color: #272626; /* Fundo preto */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 100px; /* Bordas arredondadas */
+    display: flex;
+    align-items: center; /* Centralizar verticalmente */
+    justify-content: center; /* Centralizar horizontalmente */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    max-width: 800px; /* Largura máxima da caixa */
+    margin: 20px auto; /* Centralizar a caixa na página */
+    box-shadow: 0 4px 10px rgba(46, 46, 46, 0.5); /* Sombra para efeito de profundidade */
+}
+
+.pirata-logo {
+    width: 150px; /* Largura da imagem */
+    height: auto; /* Manter proporção */
+    border-radius: 10px; /* Bordas arredondadas na imagem */
+}
+
+.selo-texto {
+    color: #ffffff; /* Cor do texto */
+    font-size: 20px; /* Tamanho do texto */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    text-align: center; /* Centralizar o texto */
+    max-width: 1000px; /* Largura máxima do texto */
+}
+
+/* Rodapé */
+footer {
+    background: rgb(0, 0, 0);
+    color: white;
+    padding: 5px;
+    width: 100%;
+    font-size: 0.9em;
+    margin-top: auto; /* Garante que o rodapé fique no final */
+}
+
+/* Estilos do Carrossel */
+.carrossel {
+    padding: 50px 20px;
+    background: rgba(0, 0, 0, 0.7); /* Fundo escuro para contraste */
+    color: white;
+    text-align: center;
+}
+
+.carrossel h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.carrossel-container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.carrossel-container img {
+    width: 80%; /* Reduz o tamanho das imagens */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(31, 31, 31, 0.3);
+    transition: transform 0.3s ease;
+    margin: 0 auto; /* Centraliza as imagens */
+}
+
+.carrossel-container img:hover {
+    transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+}
+
+/* Estilos dos pontos de navegação */
+.slick-dots li button:before {
+    color: #ff6600; /* Cor laranja */
+}
+
+.slick-dots li.slick-active button:before {
+    color: #ff4500; /* Cor laranja mais vibrante */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .introducao {
+        width: 90%;
+        margin-left: 5%;
+        padding: 40px 10px;
+        text-align: center;
+    }
+
+    .introducao h2 {
+        font-size: 2rem;
+    }
+
+    .introducao p {
+        font-size: 1rem;
+    }
+
+    .assinar-intro {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    .linha-separacao {
+        top: 70px;
+    }
+
+    .logo-intro {
+        top: -25px;
+        width: 120px;
+    }
+
+    .fundo-escuro h1,
+    .fundo-escuro h4 {
+        font-size: 1.5rem;
+    }
+
+    .streaming img {
+        max-width: 150px;
+    }
+
+    .planos {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .plano {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .caixa-selo {
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 20px;
+    }
+
+    .pirata-logo {
+        width: 100px;
+    }
+
+    .selo-texto {
+        font-size: 16px;
+    }
+
+    .carrossel-container img {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .introducao h2 {
+        font-size: 1.8rem;
+    }
+
+    .introducao p {
+        font-size: 0.9rem;
+    }
+
+    .assinar-intro {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    .logo-intro {
+        width: 100px;
+    }
+
+    .streaming img {
+        max-width: 120px;
+    }
+
+    .plano {
+        width: 100%;
+    }
+
+    .caixa-selo {
+        padding: 10px;
+        border-radius: 15px;
+    }
+
+    .pirata-logo {
+        width: 80px;
+    }
+
+    .selo-texto {
+        font-size: 14px;
+    }
+
+    .carrossel-container img {
+        width: 100%;
+    }
+}
